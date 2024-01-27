@@ -1,2 +1,2 @@
 def search_replace(my_list, search, replace):
-    return [replace if search == n else n for n in my_list]
+    return list(map(lambda f: replace if f == search else f, my_list))
