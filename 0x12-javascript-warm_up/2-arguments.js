@@ -7,5 +7,5 @@ if (argueLength === 2) {
 } else if (argueLength === 3) {
   console.log('Arguement found');
 } else {
-  console.log('Arguement found');
+  console.log('Arguements found');
 }
