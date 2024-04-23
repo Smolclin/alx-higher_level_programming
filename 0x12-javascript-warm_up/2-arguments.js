@@ -3,9 +3,9 @@
 const argueLength = process.argv.length;
 
 if (argueLength === 2) {
-  console.log('No argument');
+  console.log("No argument");
 } else if (argueLength === 3) {
-  console.log('Arguement found');
+  console.log("Argument found");
 } else {
-  console.log('Arguements found');
+  console.log("Arguments found");
 }
