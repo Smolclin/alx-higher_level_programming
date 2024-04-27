@@ -3,32 +3,30 @@
 import sys
 import MySQLdb
 
+if __name__ == "__main__":
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    db_name = sys.argv[3]
 
-def list_states(username, password, database):
-    # connects to MySQL serveet number
+    try:
+        conn = MySQLdb.connect(
+                host="localhost",
+                port=3306,
+                user=mysql_username,
+                passwd=mysql_password,
+                db=db_name,
+                charset="utf8"
+        )
+    except MySQLdb.Error as e:
+        print("Error connecting to database: {}".format(e))
+        sys.exit(1)
 
-    db = MySQLdb.connect(host='localhost', port=3306,
-                         user=username, passwd=password, db=database)
-    cursor = db.cursor()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
 
-    # To execute the SQL query to fetch all the states
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-    # Fetches all the rows from the query result
-    rows = cursor.fetchall()
-
-    # prints the result
     for row in rows:
         print(row)
 
-    # closes the database connection
-    db.close()
-
-
-# example in usage
-if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    list_states(username, password, database)
+    cur.close()
+    conn.close()
