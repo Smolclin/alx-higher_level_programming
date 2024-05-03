@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+'''
+the above script lists
+all cities from the database
+hbtn_0e_0_usa
+'''
 
 import MySQLdb as db
 from sys import argv
