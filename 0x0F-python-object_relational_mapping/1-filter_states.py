@@ -1,11 +1,17 @@
 #!/usr/bin/python3
-# List all states with name starting with N from the database hbt_0e_0_usa
-# Usage: ./1-filter_states.py <mysql username> \
-#        <mysql passwd> \
-#        <database name>
+''''
+ List all states with name starting with N from the database hbt_0e_0_usa
+ Usage: ./1-filter_states.py <mysql username> \
+        <mysql passwd> \
+        <database name>
+'''
 
 import MySQLdb
 import sys
+'''
+Access tot the database and gets the states
+from that database
+'''
 
 if __name__ == "__main__":
     first = sys.argv[1]
