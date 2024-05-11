@@ -10,7 +10,7 @@ if __name__ == '__name__':
 
     my_req = request.Request(url)
     try:
-        with request.urlopen(my_req) as response:
-            print(response.read().decode("ascii"))
-    except error.HTTPError as e:
-        print("Error code: {}".format(e.code))
+        with request.urlopen(sys.argv[1]) as response:
+            print(response.read().decode("utf8"))
+    except error.HTTPError as error:
+        print("Error code: {}".format(error.code))
