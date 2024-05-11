@@ -20,4 +20,4 @@ if __name__ == "__main__":
         else:
             print('[{}] {}'.format(req['id'], req['name']))
     except ValueError:
-        print('Not a valid')
+        print('Not a valid JSON')
